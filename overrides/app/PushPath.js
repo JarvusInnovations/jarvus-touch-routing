@@ -18,13 +18,13 @@ Ext.define('Jarvus.touch.override.app.PushPath', {
     pushPath: function(url) {
         var app = this.getApplication();
 
-        url = app.encodePath(url);
+        url = app.encodeRoute(url);
 
         app.getHistory().add(Ext.create('Ext.app.Action', {
             url: url
         }), true);
 
-        app.fireEvent('urlpush', url);
+        app.fireEvent('pathpush', url);
     },
 
     /**
